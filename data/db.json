@@ -1,0 +1,40 @@
+{
+  "data": [
+    {
+      "id": 7,
+      "isFav": true,
+      "first_name": "Michael",
+      "last_name": "Lawson"
+    },
+    {
+      "id": 8,
+      "isFav": true,
+      "first_name": "Lindsay",
+      "last_name": "Ferguson"
+    },
+    {
+      "id": 9,
+      "isFav": false,
+      "first_name": "Tobias",
+      "last_name": "Funke"
+    },
+    {
+      "id": 10,
+      "isFav": true,
+      "first_name": "Byron",
+      "last_name": "Fields"
+    },
+    {
+      "id": 11,
+      "isFav": true,
+      "first_name": "George",
+      "last_name": "Edwards"
+    },
+    {
+      "id": 12,
+      "isFav": false,
+      "first_name": "Rachel",
+      "last_name": "Howell"
+    }
+  ]
+}
