@@ -19,21 +19,45 @@ export const useTaskStore = defineStore('taskStore', {
     },
   },
   actions: {
-    addTask(task) {
+    async addTask(task) {
       this.tasks.push(task);
+      const res = await fetch('http://localhost:3000/data', {
+        method: 'POST',
+        body: JSON.stringify(task),
+        headers: {'Content-Type' : 'application/json'}
+      });
+      if (res.error) {
+        console.log(res.error)
+      }
     },
-    deleteTask(id) {
+    async deleteTask(id) {
       this.tasks = this.tasks.filter(item => {
         return item.id !== id;
       });
+      const res = await fetch('http://localhost:3000/data/' + id , {
+        method: 'DELETE'
+      });
+      if (res.error) {
+        console.log(res.error)
+      }
+
     },
-    toggleFav(id) {
+    async toggleFav(id) {
       const task = this.tasks.find(item => item.id === id);
       task.isFav = !task.isFav;
+
+      const res = await fetch('http://localhost:3000/data/' + id, {
+        method: 'PATCH',
+        body: JSON.stringify({isFav: task.isFav}),
+        headers: {'Content-Type' : 'application/json'}
+      });
+      if (res.error) {
+        console.log(res.error)
+      }
     },
     async getTasks() {
       this.isLoading = true;
-      const res = await fetch('http://localhost:3000/data');
+      const res = await fetch('http://localhost:3000/data/');
       const data = await res.json();
       this.tasks = data;
       this.isLoading = false;

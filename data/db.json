@@ -14,19 +14,19 @@
     },
     {
       "id": 9,
-      "isFav": false,
+      "isFav": true,
       "first_name": "Tobias",
       "last_name": "Funke"
     },
     {
       "id": 10,
-      "isFav": true,
+      "isFav": false,
       "first_name": "Byron",
       "last_name": "Fields"
     },
     {
       "id": 11,
-      "isFav": true,
+      "isFav": false,
       "first_name": "George",
       "last_name": "Edwards"
     },
